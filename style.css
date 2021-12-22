@@ -1,129 +1,321 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
-* {
-  font-family: "Fredoka One", sans-serif;
+*, *:after, *:before {
+  box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
+.tags {
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: -webkit-box;
+    display: flex;
 }
 
-body {
-  background: #eee;
-  background: linear-gradient(to left, #ddd, #eee);
-  position: relative;
-  overflow: hidden;
+/* Shared */
+.tag-container {
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+    position: relative;
+    -webkit-perspective: 800px;
+    perspective: 800px;
 }
 
-.page {
-  z-index: 2;
-  position: relative;
-  width: calc(80vw - 80px);
-  padding: 20px 40px;
-  margin: 0;
+.tag {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
 }
 
-#canvas-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+.tag-container:hover .tag {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
-.spacer {
-  display: block;
-  width: 100%;
-  height: 40vh;
+.tag-side {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
 }
 
-.status {
-  font-size: 3rem;
+.tag-side.is-back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    z-index: 2;
 }
 
-#loading {
-  position: absolute;
-  background-color: #3A3F69;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 3rem;
-  font-family: "Fredoka One", cursive;
+.tag-text {
+    width: 100%;
+    padding: 0 20px;
+    color: #222;
+    font: 28px 'Sacramento', cursive;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
-#ui {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 5;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-#ui .positioner {
-  width: 130vh;
-  max-width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 100px 1fr 200px;
-  align-items: flex-end;
-}
-#ui .speech-bubble {
-  display: flex;
-  justify-content: flex-end;
-}
-#ui #bubble {
-  padding: 1.5rem 2rem;
-  width: calc(100% - 4rem);
-  max-width: calc(400px - 4rem);
-  background-color: white;
-  border-radius: 1.7rem;
-  margin-bottom: 3rem;
-  position: relative;
-  cursor: pointer;
-}
-#ui #bubble::after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 1rem solid transparent;
-  border-bottom: 1rem solid transparent;
-  border-left: 1rem solid white;
-  position: absolute;
-  left: calc(100% - 0.25rem);
-  bottom: 1rem;
+/* Tag 1 */
+.tag-1-side:before {
+    content: " ";
+    background: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    z-index: 1;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
 }
 
-#text-highlight {
-  font-size: 1.5rem;
-  display: inline-block;
+.tag-1-top {
+    width: 100%;
+    margin-top: -35px;
+    position: absolute;
+    top: 0;
+    -webkit-transform: scale(0.775, 0.5) translate3d(0, 0, 0);
+    transform: scale(0.775, 0.5) translate3d(0, 0, 0);
 }
 
-#next {
-  color: #505050;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-align: right;
-  margin-top: 1rem;
-  transition: opacity 0.2s ease-in-out;
-  display: none;
+.tag-1-top:before {
+    content: " ";
+    background: #ede5d8;
+    padding-bottom: 200px;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 30px;
+    display: block;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
-#steve {
-  width: 100%;
+.tag-1-side.is-back .tag-1-top:before {
+    background: #e44f47;
 }
 
-.game {
-  cursor: url(https://assets.codepen.io/557388/crosshair.svg) 41 41, auto;
+.tag-1-text {
+    background: #ede5d8;
+    margin-top: 65px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 30px;
+    position: relative;
+    z-index: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.tag-1-side.is-back .tag-1-text {
+    background: #e44f47;
+    color: #fff;
+}
+
+/* Tag 2 */
+.tag-2-side:before,
+.tag-2-side:after {
+    content: " ";
+    background: #b6dfde;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    right: 50px;
+    -webkit-transform: skew(-45deg) translate3d(0, 0, 0);
+    transform: skew(-45deg) translate3d(0, 0, 0);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.tag-2-side.is-back:before,
+.tag-2-side.is-back:after {
+    background: #47ada0;
+}
+
+.tag-2-side:after {
+    -webkit-transform: skew(45deg);
+    transform: skew(45deg);
+}
+
+.tag-2-text:before {
+    content: " ";
+    background: #fff;
+    width: 27px;
+    height: 27px;
+    border: 6px solid #47ada0;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    z-index: 1;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+}
+
+.tag-2-side.is-back .tag-2-text:before {
+    border-color: #b6dfde;
+}
+
+.tag-2-text {
+    background: #b6dfde;
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
+
+.tag-2-side.is-back .tag-2-text {
+    background: #47ada0;
+}
+
+/* Tag 3 */
+.tag-3-side {
+    margin-top: 20px;
+    padding-top: 20px;
+    display: -webkit-box;
+    display: flex;
+}
+
+.tag-3-side:before {
+    content: " ";
+    background: #e44f47;
+    width: 150px;
+    height: 100%;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+}
+
+.tag-3-side.is-back:before {
+    background: #b6dfde;
+}
+
+.tag-3-side:after {
+    content: " ";
+    background: #fff;
+    width: 45px;
+    height: 45px;
+    border: 15px solid #e44f47;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.tag-3-side.is-back:after {
+    border-color: #b6dfde;
+}
+
+.tag-3-text {
+    background: #e44f47;
+    width: 100%;
+    border-radius: 20px;
+    padding-top: 60px;
+    color: #fff;
+    z-index: 1;
+}
+
+.tag-3-side.is-back .tag-3-text {
+    background: #b6dfde;
+    color: #222;
+}
+
+/* Extras */
+.rule-shape {
+    width: 100%;
+    color: #fff;
+    font-size: 34px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.rule-shape:before,
+.rule-shape:after {
+    content: " ";
+    background: #fff;
+    height: 1px;
+    margin-bottom: 8px;
+    display: block;
+    -webkit-box-flex: 2;
+    flex-grow: 2;
+}
+
+.rule-shape:before {
+    margin-right: 6.25px;
+}
+
+.rule-shape:after {
+    margin-left: 6.25px;
+}
+
+.rule-red {
+    color: #e44f47;
+}
+
+.rule-red:before,
+.rule-red:after {
+    background: #e44f47;
+}
+
+.rule-diagonal {
+    background: -webkit-repeating-linear-gradient(
+        45deg,
+        #e44f47,
+        #e44f47 7px,
+        transparent 7px,
+        transparent 14px,
+        #fff 14px,
+        #fff 21px,
+        transparent 21px,
+        transparent 28px
+    );
+    background: repeating-linear-gradient(
+        45deg,
+        #e44f47,
+        #e44f47 7px,
+        transparent 7px,
+        transparent 14px,
+        #fff 14px,
+        #fff 21px,
+        transparent 21px,
+        transparent 28px
+    );
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }

@@ -2,33 +2,78 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Christmas Cannon</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>CodePen - CSS Christmas Tags (Flip on Hover)</title>
+  <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet"><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<base target="_parent">
+<div class="tags">
 
-<div id="canvas-container"></div>
-<div id="ui">
-    <div class="positioner">
-        <div></div>
-        <div class="speech-bubble">
-            <div id="bubble">
-                <span id="text">Oh no! Look at this dull room, not at all Christmassy.</span>
-                <span id="text-highlight"></span>
-                <div id="next">Next</div>
+    <div class="tag-container">
+        <div class="tag">
+
+            <div class="tag-side tag-1-side">
+                <div class="tag-1-top"></div>
+                <div class="tag-text tag-1-text">
+                    Merry<br />Christmas
+                    <div class="rule-shape rule-red">&starf;</div>
+                </div>
             </div>
+
+            <div class="tag-side tag-1-side is-back">
+                <div class="tag-1-top"></div>
+                <div class="tag-text tag-1-text">
+                    And a happy New Year
+                    <div class="rule-shape">&starf;</div>
+                </div>
+            </div>
+
         </div>
-
-            <img id="steve" src="https://assets.codepen.io/557388/sad.svg" alt="Steve">
-
     </div>
-</div>
-<div id="loading">Loading</div>
-<!-- partial -->
-  <script type="module" src="./script.js"></script>
 
+    <div class="tag-container">
+        <div class="tag">
+
+            <div class="tag-side tag-2-side">
+                <div class="tag-text tag-2-text">
+                    Happy<br />Holidays
+                    <div class="rule-diagonal"></div>
+                </div>
+            </div>
+
+            <div class="tag-side tag-2-side is-back">
+                <div class="tag-text tag-2-text">
+                    May your ev'ry wish come true
+                    <div class="rule-diagonal"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="tag-container">
+        <div class="tag">
+
+            <div class="tag-side tag-3-side">
+                <div class="tag-text tag-3-text">
+                    Feliz<br />Navidad
+                    <div class="rule-shape">&#10052;</div>
+                </div>
+            </div>
+
+            <div class="tag-side tag-3-side is-back">
+                <div class="tag-text tag-3-text">
+                    Prospero Año Nuevo
+                    <div class="rule-shape">&#10052;</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- partial -->
+  
 </body>
 </html>
