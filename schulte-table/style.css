@@ -1,0 +1,78 @@
+body {
+   font-family: Comic Sans MS, sans-serif;
+   font-size: 22px;
+   background: rgb(223, 231, 239);
+   color: rgb(0, 0, 0);
+   user-select: none;
+}
+
+.game-table {
+   margin: auto;
+   box-shadow: 10px 10px 40px -10px rgba(137, 149, 168, 0.8);
+   border-radius: 5px;
+}
+
+.td {
+   width: 80px;
+   height: 80px;
+   text-align: center;
+   font-size: 28px;
+   font-weight: 100;
+   background-color: rgb(255, 255, 255);
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.td:hover {
+   background-color:  rgba(198, 206, 219, 0.966);
+}
+
+.td.select {
+   background-color: rgba(71, 189, 60, 0.3);
+}
+
+.button-start, .button-restart {
+   margin: 45px auto;
+   display: block;
+   min-width: 200px;
+   padding: 15px 5px;
+   font: inherit;
+   font-weight: 600;
+   text-transform: uppercase;
+   background: rgb(61, 163, 89);
+   color: rgb(255, 255, 255);
+   border-radius: 5px;
+   border: none;
+   cursor: pointer;
+   box-shadow: 0 0 10px rgb(56, 100, 38);
+   transition: all 0.4s;
+}
+
+.button-start:hover,
+.button-restart:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.button-restart {
+   display: none;
+}
+
+.timer {
+   margin: 20px auto;
+   text-align: center;
+   line-height: 40px;
+}
+
+.timer.lose {
+   font-size: 30px;
+   color:  rgb(252, 0, 0);
+}
+
+.timer.win {
+   font-size: 30px;
+   color:rgb(61, 163, 89);
+}
+
+.td.lose {
+   background-color: rgba(216, 219, 224, 0.966);
+}
