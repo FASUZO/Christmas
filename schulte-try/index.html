@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Schulte try</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163614281-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-163614281-1');
+		</script>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="description" content="Train speed reading online with Schulte tables">
+		<meta name="keywords" content="schulte table, speed reading, training, kids, android, download, schulte online, game">
+		<title>Test 1: Find Script</title>
+		<link rel="icon" href="https://schultetable.ru/favicon.ico" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="../../bootstrap.min.css">
+		<meta property="og:image" content="https://schultetable.ru/icon_big.png" />
+	</head>
+	<body>
+		<div id="main">
+			<div id="lang"><a href="/training">Javanese</a></div>
+			<h1><a href="/en/" title="To main page">Schulte table online</a></h1>
+			<div id="table_helper">
+				<div class="wrapper">
+					<div class="symbol_to_find"><span class="symbol"></span><br>Symbol to find</div>
+				</div>
+				<div class="timer"></div>
+			</div>
+			<div id="content">
+				<div id="settings">
+					<h2>Settings</h2>
+					<div class="setting_row">
+						<h6>Table size</h6>
+						<div class="btn-group btn-group-toggle table-size" data-toggle="buttons">
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="size3" data-table-size="3"> 3x3
+							</label>
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="size4" data-table-size="4"> 4x4
+							</label>
+							
+							</label>
+						</div>
+					</div>
+					<div class="setting_row">
+						<h6>Table type</h6>
+						<div class="btn-group btn-group-toggle table-type" data-toggle="buttons">
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="type1" data-table-type="1" checked>Digits
+							</label>
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="type2" data-table-type="2">Letters
+							</label>
+						</div>
+					</div>
+					<div class="setting_row">
+						<h6>Table style</h6>
+						<div class="btn-group btn-group-toggle table-style" data-toggle="buttons">
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="style1" data-table-style="1" checked>Classic
+							</label>
+							<!--label class="btn btn-light">
+								<input type="radio" name="options" id="style2" data-table-style="2">Red/Black
+							</label-->
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="style3" data-table-style="3">Round cells
+							</label>
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="style4" data-table-style="4">Colored
+							</label>
+						</div>
+						<div class="show_for_gorbov"></div>
+					</div>
+					<div class="setting_row">
+						<h6>Symbols order</h6>
+						<div class="btn-group btn-group-toggle order" data-toggle="buttons">
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="order1" data-order="1" checked>Direct
+							</label>
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="order2" data-order="2">Reverse
+							</label>
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="order3" data-order="3">Random
+							</label>
+						</div>
+						<div class="show_for_gorbov"></div>
+					</div>
+					<div class="setting_row">
+						<h6>Shuffle on click</h6>
+						<div class="btn-group btn-group-toggle shuffle" data-toggle="buttons">
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="shuffleOn" data-shuffle="1" checked>On
+							</label>
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="shuffleOff" data-shuffle="0">Off
+							</label>
+						</div>
+					</div>
+					<div class="setting_row">
+						<h6>Show dot in the middle</h6>
+						<div class="btn-group btn-group-toggle table-dot" data-toggle="buttons">
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="dotOn" data-dot="1">On
+							</label>
+							<label class="btn btn-light">
+								<input type="radio" name="options" id="dotOff" data-dot="0" checked>Off
+							</label>
+						</div>
+					</div>
+					<div class="setting_row">
+						<button type="button" class="btn btn-success btn-lg">Start!</button>
+					</div>
+				</div>
+				<div id="result">
+					<div class="time_container">
+						<div class="inner">
+							<span class="current">Your result:<br><span class="time">00:00</span></span><br><br>
+							<span class="record">Best time: <span class="time">00:00</span></span>
+						</div>
+					</div>
+					<div class="btns">
+						<div class="table_btns">
+							<a class="btn_info" href="/en">Information</a>
+							<div class="btn_restart">Restart</div>
+							<div class="btn_settings">Settings</div>
+						</div>
+						<div class="share_btns">
+							<script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+							<script src="https://yastatic.net/share2/share.js"></script>
+							
+						</div>
+					</div>
+				</div>
+				<div id="table" data-lang="ꦲꦤꦕꦫꦏꦢꦠꦱꦮꦭꦥꦝꦗꦪꦚꦩꦒꦧꦛ">
+
+				</div>
+				<div class="dot"></div>
+			</div>
+		
+		</div>
+		
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://schultetable.ru/jquery-3.4.1.slim.min.js"></script>
+		<script src="https://schultetable.ru/popper.min.js"></script>
+		<script src="https://schultetable.ru/bootstrap.min.js"></script>
+		<script src="https://schultetable.ru/scripts.js"></script>
+		
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+		   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		   ym(57669151, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true
+		   });
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/57669151" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
