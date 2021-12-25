@@ -5,7 +5,7 @@ const timerElem = document.querySelector('.timer');
 const cells = document.querySelectorAll('td');
 const rows = 5;
 const columns = 5;
-const time = 25;
+const time = 20;
 const numbers = [];
 
 let timer;
