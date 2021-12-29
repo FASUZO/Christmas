@@ -5,7 +5,7 @@ const timerElem = document.querySelector('.timer');
 const cells = document.querySelectorAll('td');
 const rows = 5;
 const columns = 5;
-const time = 20;
+const time = 16; //时间
 const numbers = [];
 
 let timer;
@@ -19,7 +19,7 @@ const startGame = () => {
    restartButton.style.display = 'none';
 
    createGame();
-   timerElem.innerHTML = `Timer: ${restTime}`;
+   timerElem.innerHTML = `时间: ${restTime}`;
    timer = setInterval(timeStep, 1000);
 };
 
@@ -47,11 +47,11 @@ const getRandomNumber = () => {
 const timeStep = () => {
    restTime--;
    if (restTime > 0) {
-      timerElem.innerHTML = `Timer: ${restTime}`;
+      timerElem.innerHTML = `时间: ${restTime}`;
    } else {
       clearInterval(timer);
       pause = true;
-      timerElem.innerHTML = 'Time is up!';
+      timerElem.innerHTML = '超时！';
       timerElem.classList.add('lose');
       restartButton.style.display = 'block';
    }
@@ -80,7 +80,7 @@ const init = event => {
          target.classList.add('select');
          if (currentValue === rows * columns) {
             clearInterval(timer);
-            timerElem.innerHTML = 'This game is yours!';
+            timerElem.innerHTML = '你赢了！';
             timerElem.classList.add('win');
             restartButton.style.display = 'block';
          }
